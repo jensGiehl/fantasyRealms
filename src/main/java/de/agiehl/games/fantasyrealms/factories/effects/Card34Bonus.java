@@ -5,17 +5,14 @@ import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card25Bonus implements CardBonus {
+public class Card34Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int landCount = handcards.countSuits(Suit.LAND);
-
-		int bonus = 10 * landCount;
+		// TODO: pay attention to Doppelgaenger
+		int bonus = handcards.getCardsBySuits(Suit.ARMY).stream().mapToInt(Card::getBaseStrength).sum();
 
 		card.setBonusPoints(bonus);
-
-		// TODO: Remove word ARMY on all penalty cards
 	}
 
 }

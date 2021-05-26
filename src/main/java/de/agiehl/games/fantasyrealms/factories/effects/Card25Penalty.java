@@ -1,21 +1,19 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.CardBonus;
+import de.agiehl.games.fantasyrealms.model.CardPenalty;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card25Bonus implements CardBonus {
+public class Card25Penalty implements CardPenalty {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int landCount = handcards.countSuits(Suit.LAND);
+		int cards = handcards.countSuits(Suit.LEADER, Suit.WIZARD);
 
-		int bonus = 10 * landCount;
+		int bonus = -10 * cards;
 
 		card.setBonusPoints(bonus);
-
-		// TODO: Remove word ARMY on all penalty cards
 	}
 
 }

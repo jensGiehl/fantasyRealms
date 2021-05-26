@@ -1,21 +1,22 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
+import static java.util.stream.Collectors.toList;
+
+import java.util.List;
+
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
-import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card25Bonus implements CardBonus {
+public class Card47Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int landCount = handcards.countSuits(Suit.LAND);
+		List<Integer> allBaseStrength = handcards.getCards().stream().map(Card::getBaseStrength).sorted()
+				.collect(toList());
 
-		int bonus = 10 * landCount;
+		// TODO: Implement it :)
 
-		card.setBonusPoints(bonus);
-
-		// TODO: Remove word ARMY on all penalty cards
 	}
 
 }

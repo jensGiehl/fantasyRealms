@@ -5,17 +5,15 @@ import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card25Bonus implements CardBonus {
+public class Card02Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int landCount = handcards.countSuits(Suit.LAND);
+		if (handcards.containsOneOf(19, 24)) {
+			card.setBonusPoints(25);
+		}
 
-		int bonus = 10 * landCount;
-
-		card.setBonusPoints(bonus);
-
-		// TODO: Remove word ARMY on all penalty cards
+		handcards.getCardsBySuits(Suit.WEATHER).stream().forEach(c -> c.setCleared(true));
 	}
 
 }

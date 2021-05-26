@@ -5,15 +5,15 @@ import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card1Bonus implements CardBonus {
+public class Card35Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		if (handcards.containsAllOf(13, 16)) {
-			card.setBonusPoints(50);
-		}
+		int armyCount = handcards.countSuits(Suit.ARMY);
 
-		handcards.getCardsBySuits(Suit.FLOOD).forEach(c -> c.setCleared(true));
+		int bonus = 10 * armyCount;
+
+		card.setBonusPoints(bonus);
 	}
 
 }
