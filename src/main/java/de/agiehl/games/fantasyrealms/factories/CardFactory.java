@@ -31,10 +31,10 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card21Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card22Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card24Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card25Bonus;
-import de.agiehl.games.fantasyrealms.factories.effects.Card29Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card26Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card27Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card28PlayerAction;
+import de.agiehl.games.fantasyrealms.factories.effects.Card29Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card30Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card30Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card31Bonus;
@@ -67,15 +67,12 @@ import de.agiehl.games.fantasyrealms.model.Suit;
 @Component
 public class CardFactory {
 
-	private List<Card> baseGameCards;
-
 	public CardFactory() {
 		super();
-		baseGameCards = createBaseGameCardDeck();
 	}
 
 	private List<Card> createBaseGameCardDeck() {
-		List<Card> cards = new ArrayList<>();
+		List<Card> cards = new ArrayList<>(53);
 
 		cards.add(Card.builder().cardId(1).baseStrength(9).suit(Suit.LAND).bonus(new Card01Bonus()).build());
 		cards.add(Card.builder().cardId(2).baseStrength(6).suit(Suit.LAND).bonus(new Card02Bonus()).build());
@@ -153,7 +150,7 @@ public class CardFactory {
 	}
 
 	public List<Card> getBaseGameCardDeck() {
-		return baseGameCards;
+		return createBaseGameCardDeck();
 	}
 
 }
