@@ -7,6 +7,7 @@ import java.util.List;
 
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.ChooseCardFrom;
+import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.PlayerAction;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
@@ -23,7 +24,7 @@ public class Card51PlayerAction implements PlayerAction {
 	}
 
 	@Override
-	public void choose(Card card, Card choosenCard) {
+	public void apply(Card card, Card choosenCard, HandCards handCards) {
 		card.setCardId(choosenCard.getCardId());
 		card.setSuit(choosenCard.getSuit());
 	}

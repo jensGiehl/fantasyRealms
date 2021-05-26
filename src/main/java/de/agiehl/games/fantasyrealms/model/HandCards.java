@@ -28,6 +28,14 @@ public class HandCards {
 	@Singular("card")
 	List<Card> cards;
 
+	public void addCard(Card card) {
+		cards.add(card);
+	}
+
+	public void discardCard(Card card) {
+		cards.remove(card);
+	}
+
 	public List<Card> getCards() {
 		return unmodifiableList(cards);
 	}
@@ -73,12 +81,37 @@ public class HandCards {
 		return getCardsBySuits(suits).size();
 	}
 
+	public List<Card> getAllCardsWithBonusEffects() {
+		return cards.stream().filter(c -> Objects.nonNull(c.getBonus())).collect(toList());
+	}
+
 	public List<CardBonus> getAllBonusEffects() {
-		return cards.stream().map(Card::getBonus).filter(Objects::nonNull).collect(toList());
+		return getAllCardsWithBonusEffects().stream().map(Card::getBonus).collect(toList());
+	}
+
+	public List<Card> getAllCardsWithPenaltyEffects() {
+		return cards.stream().filter(c -> Objects.nonNull(c.getPenalty())).collect(toList());
+	}
+
+	public List<Card> getAllCardsWithPenaltyEffectsWithSuit(Suit... suits) {
+		List<Suit> whitliste = Arrays.asList(suits);
+		return getAllCardsWithPenaltyEffects().stream().filter(c -> whitliste.contains(c.getSuit())).collect(toList());
 	}
 
 	public List<CardPenalty> getAllPenaltyEffects() {
-		return cards.stream().map(Card::getPenalty).filter(Objects::nonNull).collect(toList());
+		return getAllCardsWithPenaltyEffects().stream().map(Card::getPenalty).collect(toList());
+	}
+
+	public List<CardPenalty> getAllPenaltyEffectsWithSuit(Suit... suits) {
+		return getAllCardsWithPenaltyEffectsWithSuit(suits).stream().map(Card::getPenalty).collect(toList());
+	}
+
+	public List<Card> getAllCardsWithPlayerActionEffects() {
+		return cards.stream().filter(c -> Objects.nonNull(c.getPlayerAction())).collect(toList());
+	}
+
+	public List<PlayerAction> getAllPlayerActions() {
+		return getAllCardsWithPlayerActionEffects().stream().map(Card::getPlayerAction).collect(toList());
 	}
 
 }

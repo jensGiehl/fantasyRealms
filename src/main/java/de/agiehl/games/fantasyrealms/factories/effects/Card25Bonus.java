@@ -15,7 +15,7 @@ public class Card25Bonus implements CardBonus {
 
 		card.setBonusPoints(bonus);
 
-		// TODO: Remove word ARMY on all penalty cards
+		handcards.getAllPenaltyEffects().forEach(p -> p.removePenaltyForSuits(Suit.ARMY));
 	}
 
 }

@@ -7,13 +7,20 @@ import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card17Penalty implements CardPenalty {
 
+	private Suit[] penatlySuits = new Suit[] { Suit.LAND };
+
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int landCount = handcards.countSuits(Suit.LAND);
+		int landCount = handcards.countSuits(penatlySuits);
 
 		int bonus = -2 * landCount;
 
 		card.setBonusPoints(bonus);
+	}
+
+	@Override
+	public void removePenaltyForSuits(Suit... suits) {
+		penatlySuits = ArrayUtils.removeSuitsFrom(penatlySuits, suits);
 	}
 
 }

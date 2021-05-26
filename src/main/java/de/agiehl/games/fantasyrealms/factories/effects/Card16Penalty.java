@@ -10,15 +10,20 @@ import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card16Penalty implements CardPenalty {
 
+	private Suit[] penatlySuits = new Suit[] { Suit.FLAME, Suit.WIZARD, Suit.WEATHER, Suit.WEAPON, Suit.ARTIFACT };
+
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		List<Card> cards = handcards.getCardsExceptSuits(Suit.FLAME, Suit.WIZARD, Suit.WEATHER, Suit.WEAPON,
-				Suit.ARTIFACT);
+		List<Card> cards = handcards.getCardsExceptSuits(penatlySuits);
 
 		List<Integer> cardsWhichAreNotBlanked = Arrays.asList(new Integer[] { 1, 36, 8, 39, 9 });
 
 		cards.stream().filter(c -> !cardsWhichAreNotBlanked.contains(c.getCardId())).forEach(c -> c.setBlanked(true));
+	}
 
+	@Override
+	public void removePenaltyForSuits(Suit... suits) {
+		penatlySuits = ArrayUtils.removeSuitsFrom(penatlySuits, suits);
 	}
 
 }

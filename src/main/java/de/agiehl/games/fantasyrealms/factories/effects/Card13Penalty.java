@@ -7,11 +7,18 @@ import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card13Penalty implements CardPenalty {
 
+	private Suit[] penatlySuits = new Suit[] { Suit.FLAME };
+
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		if (handcards.countSuits(Suit.FLAME) == 0) {
+		if (handcards.containsSuits(penatlySuits)) {
 			card.setBlanked(true);
 		}
+	}
+
+	@Override
+	public void removePenaltyForSuits(Suit... suits) {
+		penatlySuits = ArrayUtils.removeSuitsFrom(penatlySuits, suits);
 	}
 
 }

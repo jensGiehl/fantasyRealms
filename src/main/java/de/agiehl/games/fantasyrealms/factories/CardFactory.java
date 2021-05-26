@@ -31,7 +31,7 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card21Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card22Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card24Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card25Bonus;
-import de.agiehl.games.fantasyrealms.factories.effects.Card25Penalty;
+import de.agiehl.games.fantasyrealms.factories.effects.Card29Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card26Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card27Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card28PlayerAction;
@@ -47,6 +47,7 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card36Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card37Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card38Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card40Bonus;
+import de.agiehl.games.fantasyrealms.factories.effects.Card41Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card41Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card42Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card43Bonus;
@@ -111,7 +112,7 @@ public class CardFactory {
 		cards.add(Card.builder().cardId(27).baseStrength(9).suit(Suit.WIZARD).bonus(new Card27Bonus()).build());
 		cards.add(Card.builder().cardId(28).baseStrength(3).suit(Suit.WIZARD).playerAction(new Card28PlayerAction())
 				.build());
-		cards.add(Card.builder().cardId(29).baseStrength(25).suit(Suit.WIZARD).penalty(new Card25Penalty()).build());
+		cards.add(Card.builder().cardId(29).baseStrength(25).suit(Suit.WIZARD).penalty(new Card29Penalty()).build());
 		cards.add(Card.builder().cardId(30).baseStrength(5).suit(Suit.WIZARD).bonus(new Card30Bonus()).build());
 
 		cards.add(Card.builder().cardId(31).baseStrength(8).suit(Suit.LEADER).bonus(new Card31Bonus()).build());
@@ -127,7 +128,8 @@ public class CardFactory {
 		cards.add(Card.builder().cardId(39).baseStrength(30).suit(Suit.BEAST).penalty(new Card30Penalty()).build());
 		cards.add(Card.builder().cardId(40).baseStrength(12).suit(Suit.BEAST).bonus(new Card40Bonus()).build());
 
-		cards.add(Card.builder().cardId(41).baseStrength(23).suit(Suit.WEAPON).penalty(new Card41Penalty()).build());
+		cards.add(Card.builder().cardId(41).baseStrength(23).suit(Suit.WEAPON).bonus(new Card41Bonus())
+				.penalty(new Card41Penalty()).build());
 		cards.add(Card.builder().cardId(42).baseStrength(1).suit(Suit.WEAPON).bonus(new Card42Bonus()).build());
 		cards.add(Card.builder().cardId(43).baseStrength(7).suit(Suit.WEAPON).bonus(new Card43Bonus()).build());
 		cards.add(Card.builder().cardId(44).baseStrength(3).suit(Suit.WEAPON).bonus(new Card44Bonus()).build());

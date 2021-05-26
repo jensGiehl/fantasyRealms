@@ -11,6 +11,6 @@ public interface PlayerAction {
 		return Collections.emptyList();
 	}
 
-	void choose(Card card, Card choosenCard);
+	void apply(Card card, Card choosenCard, HandCards handCards);
 
 }

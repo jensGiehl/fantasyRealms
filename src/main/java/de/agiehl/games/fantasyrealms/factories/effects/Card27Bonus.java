@@ -15,7 +15,7 @@ public class Card27Bonus implements CardBonus {
 
 		card.setBonusPoints(bonus);
 
-		// TODO: Remove BEAST on alle penalties
+		handcards.getCardsBySuits(Suit.BEAST).forEach(c -> c.setCleared(true));
 	}
 
 }

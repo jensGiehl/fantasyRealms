@@ -1,19 +1,15 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.CardPenalty;
+import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card25Penalty implements CardPenalty {
+public class Card41Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		int cards = handcards.countSuits(Suit.LEADER, Suit.WIZARD);
-
-		int bonus = -10 * cards;
-
-		card.setBonusPoints(bonus);
+		handcards.getAllPenaltyEffectsWithSuit(Suit.FLOOD).stream().forEach(p -> p.removePenaltyForSuits(Suit.ARMY));
 	}
 
 }

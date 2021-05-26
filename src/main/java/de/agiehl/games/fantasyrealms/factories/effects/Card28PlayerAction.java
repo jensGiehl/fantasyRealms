@@ -7,6 +7,7 @@ import java.util.List;
 
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.ChooseCardFrom;
+import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.PlayerAction;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
@@ -23,8 +24,8 @@ public class Card28PlayerAction implements PlayerAction {
 	}
 
 	@Override
-	public void choose(Card card, Card choosenCard) {
-		// TODO: Find a way to impl.
+	public void apply(Card card, Card choosenCard, HandCards handCards) {
+		handCards.addCard(choosenCard);
 	}
 
 }

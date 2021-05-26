@@ -9,7 +9,6 @@ public class Card34Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		// TODO: pay attention to Doppelgaenger
 		int bonus = handcards.getCardsBySuits(Suit.ARMY).stream().mapToInt(Card::getBaseStrength).sum();
 
 		card.setBonusPoints(bonus);

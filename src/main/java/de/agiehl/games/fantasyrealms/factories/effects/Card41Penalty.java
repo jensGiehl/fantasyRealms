@@ -7,13 +7,18 @@ import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card41Penalty implements CardPenalty {
 
+	private Suit[] penatlySuits = new Suit[] { Suit.FLOOD };
+
 	@Override
 	public void accept(Card card, HandCards handcards) {
-		if (handcards.notContainsSuits(Suit.FLOOD)) {
+		if (handcards.notContainsSuits(penatlySuits)) {
 			card.isBlanked();
-		} else {
-			// TODO: Remove ARMY on all FLOOD cards
 		}
+	}
+
+	@Override
+	public void removePenaltyForSuits(Suit... suits) {
+		penatlySuits = ArrayUtils.removeSuitsFrom(penatlySuits, suits);
 	}
 
 }
