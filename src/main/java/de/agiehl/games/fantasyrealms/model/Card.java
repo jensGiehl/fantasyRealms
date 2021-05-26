@@ -1,9 +1,7 @@
 package de.agiehl.games.fantasyrealms.model;
 
 import lombok.Builder;
-import lombok.Setter;
-import lombok.Value;
-import lombok.experimental.NonFinal;
+import lombok.Data;
 
 /**
  * Represent a card
@@ -12,7 +10,7 @@ import lombok.experimental.NonFinal;
  *
  */
 @Builder
-@Value
+@Data
 public class Card {
 
 	int cardId;
@@ -25,18 +23,14 @@ public class Card {
 
 	CardPenalty penalty;
 
-	@NonFinal
-	@Setter
+	PlayerAction playerAction;
+
 	@Builder.Default
 	int bonusPoints = 0;
 
-	@NonFinal
-	@Setter
 	@Builder.Default
 	boolean isBlanked = false;
 
-	@NonFinal
-	@Setter
 	@Builder.Default
 	boolean isCleared = false;
 
