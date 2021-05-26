@@ -8,7 +8,6 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
-import java.util.function.BiConsumer;
 
 import lombok.Builder;
 import lombok.Singular;
@@ -74,11 +73,11 @@ public class HandCards {
 		return getCardsBySuits(suits).size();
 	}
 
-	public List<BiConsumer<Card, HandCards>> getAllBonusEffects() {
+	public List<CardBonus> getAllBonusEffects() {
 		return cards.stream().map(Card::getBonus).filter(Objects::nonNull).collect(toList());
 	}
 
-	public List<BiConsumer<Card, HandCards>> getAllPenaltyEffects() {
+	public List<CardPenalty> getAllPenaltyEffects() {
 		return cards.stream().map(Card::getPenalty).filter(Objects::nonNull).collect(toList());
 	}
 

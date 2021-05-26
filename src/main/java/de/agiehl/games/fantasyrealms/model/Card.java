@@ -1,7 +1,5 @@
 package de.agiehl.games.fantasyrealms.model;
 
-import java.util.function.BiConsumer;
-
 import lombok.Builder;
 import lombok.Setter;
 import lombok.Value;
@@ -23,9 +21,9 @@ public class Card {
 
 	int baseStrength;
 
-	BiConsumer<Card, HandCards> bonus;
+	CardBonus bonus;
 
-	BiConsumer<Card, HandCards> penalty;
+	CardPenalty penalty;
 
 	@NonFinal
 	@Setter

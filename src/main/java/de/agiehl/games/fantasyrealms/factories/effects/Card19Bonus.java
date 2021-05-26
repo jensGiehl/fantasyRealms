@@ -1,11 +1,10 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import java.util.function.BiConsumer;
-
 import de.agiehl.games.fantasyrealms.model.Card;
+import de.agiehl.games.fantasyrealms.model.CardBonus;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 
-public class Card19Bonus implements BiConsumer<Card, HandCards> {
+public class Card19Bonus implements CardBonus {
 
 	@Override
 	public void accept(Card card, HandCards handcards) {
