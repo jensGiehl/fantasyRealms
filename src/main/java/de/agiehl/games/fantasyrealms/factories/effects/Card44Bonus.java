@@ -1,13 +1,13 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.CardBonus;
+import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 
-public class Card44Bonus implements CardBonus {
+public class Card44Bonus implements BonusStrength {
 
 	@Override
-	public void accept(Card card, HandCards handcards) {
+	public void apply(Card card, HandCards handcards) {
 		if (handcards.containsOneOf(22, 34, 27)) {
 			card.setBonusPoints(30);
 		}

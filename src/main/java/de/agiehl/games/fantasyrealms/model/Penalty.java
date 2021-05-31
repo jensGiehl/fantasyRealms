@@ -1,8 +1,8 @@
 package de.agiehl.games.fantasyrealms.model;
 
-public interface CardPenalty {
+public interface Penalty {
 
-	void accept(Card card, HandCards handcards);
+	void apply(Card card, HandCards handcards);
 
 	default void removePenaltyForSuits(Suit... suits) {
 

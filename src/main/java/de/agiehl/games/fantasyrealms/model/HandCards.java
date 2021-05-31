@@ -85,7 +85,7 @@ public class HandCards {
 		return cards.stream().filter(c -> Objects.nonNull(c.getBonus())).collect(toList());
 	}
 
-	public List<CardBonus> getAllBonusEffects() {
+	public List<BonusStrength> getAllBonusEffects() {
 		return getAllCardsWithBonusEffects().stream().map(Card::getBonus).collect(toList());
 	}
 
@@ -98,11 +98,11 @@ public class HandCards {
 		return getAllCardsWithPenaltyEffects().stream().filter(c -> whitliste.contains(c.getSuit())).collect(toList());
 	}
 
-	public List<CardPenalty> getAllPenaltyEffects() {
+	public List<Penalty> getAllPenaltyEffects() {
 		return getAllCardsWithPenaltyEffects().stream().map(Card::getPenalty).collect(toList());
 	}
 
-	public List<CardPenalty> getAllPenaltyEffectsWithSuit(Suit... suits) {
+	public List<Penalty> getAllPenaltyEffectsWithSuit(Suit... suits) {
 		return getAllCardsWithPenaltyEffectsWithSuit(suits).stream().map(Card::getPenalty).collect(toList());
 	}
 

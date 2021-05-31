@@ -4,16 +4,16 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.CardPenalty;
+import de.agiehl.games.fantasyrealms.model.Penalty;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card08Penalty implements CardPenalty {
+public class Card08Penalty implements Penalty {
 
 	private Suit[] penatlySuits = new Suit[] { Suit.ARMY, Suit.LAND, Suit.FLAME };
 
 	@Override
-	public void accept(Card card, HandCards handcards) {
+	public void apply(Card card, HandCards handcards) {
 		List<Card> blankedCards = handcards.getCardsBySuits(penatlySuits).stream()
 				.filter(c -> c.getCardId() != 19 && c.getCardId() != 1).collect(Collectors.toList());
 

@@ -19,9 +19,11 @@ public class Card {
 
 	int baseStrength;
 
-	CardBonus bonus;
+	BonusStrength bonus;
 
-	CardPenalty penalty;
+	ClearsPenalty clearsPenalty;
+
+	Penalty penalty;
 
 	PlayerAction playerAction;
 
