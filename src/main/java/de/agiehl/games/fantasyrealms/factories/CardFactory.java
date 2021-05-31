@@ -1,5 +1,59 @@
 package de.agiehl.games.fantasyrealms.factories;
 
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.AIR_ELEMENTAL;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.BASILISK;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.BEASTMASTER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.BELL_TOWER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.BLIZZARD;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.BOOK_OF_CHANGES;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.CANDLE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.CAVERN;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.COLLECTOR;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.DOPPELGAENGER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.DRAGON;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.DWARVISH_INFANTRY;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.EARTH_ELEMENTAL;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.ELVEN_ARCHERS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.ELVEN_LONGBOW;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.EMPRESS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.ENCHANTRESS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.FIRE_ELEMENTAL;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.FOREST;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.FORGE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.FOUNTAIN_OF_LIFE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.GEM_OF_ORDER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.GREAT_FLOOD;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.HYDRA;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.ISLAND;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.KING;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.KNIGHTS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.LIGHTNING;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.LIGHT_CAVALRY;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.MAGIC_WAND;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.MIRAGE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.MOUNTAIN;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.NECROMANCER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.PRINCESS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.PROTECTION_RUNE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.QUEEN;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.RAINSTORM;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.RANGERS;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SHAPESHIFTER;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SHIELD_OF_KETH;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SMOKE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SWAMP;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SWORD_OF_KETH;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.UNICORN;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WARHORSE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WARLOCK_LORD;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WARLORD;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WARSHIP;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WAR_DIRIGIBLE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WATER_ELEMENTAL;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WHIRLWIND;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WILDFIRE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WORLD_TREE;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -74,77 +128,122 @@ public class CardFactory {
 	private List<Card> createBaseGameCardDeck() {
 		List<Card> cards = new ArrayList<>(53);
 
-		cards.add(Card.builder().cardId(1).baseStrength(9).suit(Suit.LAND).bonus(new Card01Bonus()).build());
-		cards.add(Card.builder().cardId(2).baseStrength(6).suit(Suit.LAND).bonus(new Card02Bonus()).build());
-		cards.add(Card.builder().cardId(3).baseStrength(8).suit(Suit.LAND).bonus(new Card03Bonus()).build());
-		cards.add(Card.builder().cardId(4).baseStrength(7).suit(Suit.LAND).bonus(new Card07Bonus()).build());
-		cards.add(Card.builder().cardId(5).baseStrength(4).suit(Suit.LAND).bonus(new Card04Bonus()).build());
-
-		cards.add(Card.builder().cardId(6).baseStrength(1).suit(Suit.FLOOD).bonus(new Card06Bonus()).build());
-		cards.add(Card.builder().cardId(7).baseStrength(18).suit(Suit.FLOOD).penalty(new Card07Penalty()).build());
-		cards.add(Card.builder().cardId(8).baseStrength(32).suit(Suit.FLOOD).penalty(new Card08Penalty()).build());
-		cards.add(Card.builder().cardId(9).baseStrength(14).suit(Suit.FLOOD).bonus(new Card09Bonus()).build());
-		cards.add(Card.builder().cardId(10).baseStrength(4).suit(Suit.FLOOD).bonus(new Card10Bonus()).build());
-
-		cards.add(Card.builder().cardId(11).baseStrength(8).suit(Suit.WEATHER).bonus(new Card11Bonus())
-				.penalty(new Card11Penatly()).build());
-		cards.add(Card.builder().cardId(12).baseStrength(30).suit(Suit.WEATHER).penalty(new Card12Penalty()).build());
-		cards.add(Card.builder().cardId(13).baseStrength(27).suit(Suit.WEATHER).penalty(new Card13Penalty()).build());
-		cards.add(Card.builder().cardId(14).baseStrength(13).suit(Suit.WEATHER).bonus(new Card14Bonus()).build());
-		cards.add(Card.builder().cardId(15).baseStrength(4).suit(Suit.WEATHER).bonus(new Card15Bonus()).build());
-
-		cards.add(Card.builder().cardId(16).baseStrength(40).suit(Suit.FLAME).penalty(new Card16Penalty()).build());
-		cards.add(Card.builder().cardId(17).baseStrength(2).suit(Suit.FLAME).bonus(new Card17Bonus()).build());
-		cards.add(Card.builder().cardId(18).baseStrength(9).suit(Suit.FLAME).bonus(new Card18Bonus()).build());
-		cards.add(Card.builder().cardId(19).baseStrength(11).suit(Suit.FLAME).bonus(new Card19Bonus()).build());
-		cards.add(Card.builder().cardId(20).baseStrength(4).suit(Suit.FLAME).bonus(new Card20Bonus()).build());
-
-		cards.add(Card.builder().cardId(21).baseStrength(20).suit(Suit.ARMY).penalty(new Card21Penalty()).build());
-		cards.add(Card.builder().cardId(22).baseStrength(10).suit(Suit.ARMY).bonus(new Card22Bonus()).build());
-		cards.add(Card.builder().cardId(23).baseStrength(17).suit(Suit.ARMY).penalty(new Card17Penalty()).build());
-		cards.add(Card.builder().cardId(24).baseStrength(15).suit(Suit.ARMY).penalty(new Card24Penalty()).build());
-		cards.add(Card.builder().cardId(25).baseStrength(5).suit(Suit.ARMY).bonus(new Card25Bonus()).build());
-
-		cards.add(Card.builder().cardId(26).baseStrength(7).suit(Suit.WIZARD).bonus(new Card26Bonus()).build());
-		cards.add(Card.builder().cardId(27).baseStrength(9).suit(Suit.WIZARD).bonus(new Card27Bonus()).build());
-		cards.add(Card.builder().cardId(28).baseStrength(3).suit(Suit.WIZARD).playerAction(new Card28PlayerAction())
+		cards.add(Card.builder().cardId(MOUNTAIN.getId()).baseStrength(9).suit(Suit.LAND).bonus(new Card01Bonus())
 				.build());
-		cards.add(Card.builder().cardId(29).baseStrength(25).suit(Suit.WIZARD).penalty(new Card29Penalty()).build());
-		cards.add(Card.builder().cardId(30).baseStrength(5).suit(Suit.WIZARD).bonus(new Card30Bonus()).build());
+		cards.add(
+				Card.builder().cardId(CAVERN.getId()).baseStrength(6).suit(Suit.LAND).bonus(new Card02Bonus()).build());
+		cards.add(Card.builder().cardId(BELL_TOWER.getId()).baseStrength(8).suit(Suit.LAND).bonus(new Card03Bonus())
+				.build());
+		cards.add(
+				Card.builder().cardId(FOREST.getId()).baseStrength(7).suit(Suit.LAND).bonus(new Card07Bonus()).build());
+		cards.add(Card.builder().cardId(EARTH_ELEMENTAL.getId()).baseStrength(4).suit(Suit.LAND)
+				.bonus(new Card04Bonus()).build());
 
-		cards.add(Card.builder().cardId(31).baseStrength(8).suit(Suit.LEADER).bonus(new Card31Bonus()).build());
-		cards.add(Card.builder().cardId(32).baseStrength(6).suit(Suit.LEADER).bonus(new Card32Bonus()).build());
-		cards.add(Card.builder().cardId(33).baseStrength(2).suit(Suit.LEADER).bonus(new Card33Bonus()).build());
-		cards.add(Card.builder().cardId(34).baseStrength(4).suit(Suit.LEADER).bonus(new Card34Bonus()).build());
-		cards.add(Card.builder().cardId(35).baseStrength(15).suit(Suit.LEADER).bonus(new Card35Bonus())
+		cards.add(Card.builder().cardId(FOUNTAIN_OF_LIFE.getId()).baseStrength(1).suit(Suit.FLOOD)
+				.bonus(new Card06Bonus()).build());
+		cards.add(Card.builder().cardId(SWAMP.getId()).baseStrength(18).suit(Suit.FLOOD).penalty(new Card07Penalty())
+				.build());
+		cards.add(Card.builder().cardId(GREAT_FLOOD.getId()).baseStrength(32).suit(Suit.FLOOD)
+				.penalty(new Card08Penalty()).build());
+		cards.add(Card.builder().cardId(ISLAND.getId()).baseStrength(14).suit(Suit.FLOOD).bonus(new Card09Bonus())
+				.build());
+		cards.add(Card.builder().cardId(WATER_ELEMENTAL.getId()).baseStrength(4).suit(Suit.FLOOD)
+				.bonus(new Card10Bonus()).build());
+
+		cards.add(Card.builder().cardId(RAINSTORM.getId()).baseStrength(8).suit(Suit.WEATHER).bonus(new Card11Bonus())
+				.penalty(new Card11Penatly()).build());
+		cards.add(Card.builder().cardId(BLIZZARD.getId()).baseStrength(30).suit(Suit.WEATHER)
+				.penalty(new Card12Penalty()).build());
+		cards.add(Card.builder().cardId(SMOKE.getId()).baseStrength(27).suit(Suit.WEATHER).penalty(new Card13Penalty())
+				.build());
+		cards.add(Card.builder().cardId(WHIRLWIND.getId()).baseStrength(13).suit(Suit.WEATHER).bonus(new Card14Bonus())
+				.build());
+		cards.add(Card.builder().cardId(AIR_ELEMENTAL.getId()).baseStrength(4).suit(Suit.WEATHER)
+				.bonus(new Card15Bonus()).build());
+
+		cards.add(Card.builder().cardId(WILDFIRE.getId()).baseStrength(40).suit(Suit.FLAME).penalty(new Card16Penalty())
+				.build());
+		cards.add(Card.builder().cardId(CANDLE.getId()).baseStrength(2).suit(Suit.FLAME).bonus(new Card17Bonus())
+				.build());
+		cards.add(
+				Card.builder().cardId(FORGE.getId()).baseStrength(9).suit(Suit.FLAME).bonus(new Card18Bonus()).build());
+		cards.add(Card.builder().cardId(LIGHTNING.getId()).baseStrength(11).suit(Suit.FLAME).bonus(new Card19Bonus())
+				.build());
+		cards.add(Card.builder().cardId(FIRE_ELEMENTAL.getId()).baseStrength(4).suit(Suit.FLAME)
+				.bonus(new Card20Bonus()).build());
+
+		cards.add(Card.builder().cardId(KNIGHTS.getId()).baseStrength(20).suit(Suit.ARMY).penalty(new Card21Penalty())
+				.build());
+		cards.add(Card.builder().cardId(ELVEN_ARCHERS.getId()).baseStrength(10).suit(Suit.ARMY).bonus(new Card22Bonus())
+				.build());
+		cards.add(Card.builder().cardId(LIGHT_CAVALRY.getId()).baseStrength(17).suit(Suit.ARMY)
+				.penalty(new Card17Penalty()).build());
+		cards.add(Card.builder().cardId(DWARVISH_INFANTRY.getId()).baseStrength(15).suit(Suit.ARMY)
+				.penalty(new Card24Penalty()).build());
+		cards.add(Card.builder().cardId(RANGERS.getId()).baseStrength(5).suit(Suit.ARMY).bonus(new Card25Bonus())
+				.build());
+
+		cards.add(Card.builder().cardId(COLLECTOR.getId()).baseStrength(7).suit(Suit.WIZARD).bonus(new Card26Bonus())
+				.build());
+		cards.add(Card.builder().cardId(BEASTMASTER.getId()).baseStrength(9).suit(Suit.WIZARD).bonus(new Card27Bonus())
+				.build());
+		cards.add(Card.builder().cardId(NECROMANCER.getId()).baseStrength(3).suit(Suit.WIZARD)
+				.playerAction(new Card28PlayerAction()).build());
+		cards.add(Card.builder().cardId(WARLOCK_LORD.getId()).baseStrength(25).suit(Suit.WIZARD)
+				.penalty(new Card29Penalty()).build());
+		cards.add(Card.builder().cardId(ENCHANTRESS.getId()).baseStrength(5).suit(Suit.WIZARD).bonus(new Card30Bonus())
+				.build());
+
+		cards.add(
+				Card.builder().cardId(KING.getId()).baseStrength(8).suit(Suit.LEADER).bonus(new Card31Bonus()).build());
+		cards.add(Card.builder().cardId(QUEEN.getId()).baseStrength(6).suit(Suit.LEADER).bonus(new Card32Bonus())
+				.build());
+		cards.add(Card.builder().cardId(PRINCESS.getId()).baseStrength(2).suit(Suit.LEADER).bonus(new Card33Bonus())
+				.build());
+		cards.add(Card.builder().cardId(WARLORD.getId()).baseStrength(4).suit(Suit.LEADER).bonus(new Card34Bonus())
+				.build());
+		cards.add(Card.builder().cardId(EMPRESS.getId()).baseStrength(15).suit(Suit.LEADER).bonus(new Card35Bonus())
 				.penalty(new Card35Penalty()).build());
 
-		cards.add(Card.builder().cardId(36).baseStrength(9).suit(Suit.BEAST).bonus(new Card36Bonus()).build());
-		cards.add(Card.builder().cardId(37).baseStrength(35).suit(Suit.BEAST).penalty(new Card37Penalty()).build());
-		cards.add(Card.builder().cardId(38).baseStrength(6).suit(Suit.BEAST).bonus(new Card38Bonus()).build());
-		cards.add(Card.builder().cardId(39).baseStrength(30).suit(Suit.BEAST).penalty(new Card30Penalty()).build());
-		cards.add(Card.builder().cardId(40).baseStrength(12).suit(Suit.BEAST).bonus(new Card40Bonus()).build());
+		cards.add(Card.builder().cardId(UNICORN.getId()).baseStrength(9).suit(Suit.BEAST).bonus(new Card36Bonus())
+				.build());
+		cards.add(Card.builder().cardId(BASILISK.getId()).baseStrength(35).suit(Suit.BEAST).penalty(new Card37Penalty())
+				.build());
+		cards.add(Card.builder().cardId(WARHORSE.getId()).baseStrength(6).suit(Suit.BEAST).bonus(new Card38Bonus())
+				.build());
+		cards.add(Card.builder().cardId(DRAGON.getId()).baseStrength(30).suit(Suit.BEAST).penalty(new Card30Penalty())
+				.build());
+		cards.add(Card.builder().cardId(HYDRA.getId()).baseStrength(12).suit(Suit.BEAST).bonus(new Card40Bonus())
+				.build());
 
-		cards.add(Card.builder().cardId(41).baseStrength(23).suit(Suit.WEAPON).bonus(new Card41Bonus())
+		cards.add(Card.builder().cardId(WARSHIP.getId()).baseStrength(23).suit(Suit.WEAPON).bonus(new Card41Bonus())
 				.penalty(new Card41Penalty()).build());
-		cards.add(Card.builder().cardId(42).baseStrength(1).suit(Suit.WEAPON).bonus(new Card42Bonus()).build());
-		cards.add(Card.builder().cardId(43).baseStrength(7).suit(Suit.WEAPON).bonus(new Card43Bonus()).build());
-		cards.add(Card.builder().cardId(44).baseStrength(3).suit(Suit.WEAPON).bonus(new Card44Bonus()).build());
-		cards.add(Card.builder().cardId(45).baseStrength(35).suit(Suit.WEAPON).penalty(new Card45Penalty()).build());
+		cards.add(Card.builder().cardId(MAGIC_WAND.getId()).baseStrength(1).suit(Suit.WEAPON).bonus(new Card42Bonus())
+				.build());
+		cards.add(Card.builder().cardId(SWORD_OF_KETH.getId()).baseStrength(7).suit(Suit.WEAPON)
+				.bonus(new Card43Bonus()).build());
+		cards.add(Card.builder().cardId(ELVEN_LONGBOW.getId()).baseStrength(3).suit(Suit.WEAPON)
+				.bonus(new Card44Bonus()).build());
+		cards.add(Card.builder().cardId(WAR_DIRIGIBLE.getId()).baseStrength(35).suit(Suit.WEAPON)
+				.penalty(new Card45Penalty()).build());
 
-		cards.add(Card.builder().cardId(46).baseStrength(4).suit(Suit.ARTIFACT).bonus(new Card46Bonus()).build());
-		cards.add(Card.builder().cardId(47).baseStrength(5).suit(Suit.ARTIFACT).bonus(new Card47Bonus()).build());
-		cards.add(Card.builder().cardId(48).baseStrength(2).suit(Suit.ARTIFACT).bonus(new Card48Bonus()).build());
-		cards.add(Card.builder().cardId(49).baseStrength(3).suit(Suit.ARTIFACT).playerAction(new Card49PlayerAction())
+		cards.add(Card.builder().cardId(SHIELD_OF_KETH.getId()).baseStrength(4).suit(Suit.ARTIFACT)
+				.bonus(new Card46Bonus()).build());
+		cards.add(Card.builder().cardId(GEM_OF_ORDER.getId()).baseStrength(5).suit(Suit.ARTIFACT)
+				.bonus(new Card47Bonus()).build());
+		cards.add(Card.builder().cardId(WORLD_TREE.getId()).baseStrength(2).suit(Suit.ARTIFACT).bonus(new Card48Bonus())
 				.build());
-		cards.add(Card.builder().cardId(50).baseStrength(1).suit(Suit.ARTIFACT).bonus(new Card50Bonus()).build());
+		cards.add(Card.builder().cardId(BOOK_OF_CHANGES.getId()).baseStrength(3).suit(Suit.ARTIFACT)
+				.playerAction(new Card49PlayerAction()).build());
+		cards.add(Card.builder().cardId(PROTECTION_RUNE.getId()).baseStrength(1).suit(Suit.ARTIFACT)
+				.bonus(new Card50Bonus()).build());
 
-		cards.add(Card.builder().cardId(51).baseStrength(0).suit(Suit.WILD).playerAction(new Card51PlayerAction())
-				.build());
-		cards.add(Card.builder().cardId(52).baseStrength(0).suit(Suit.WILD).playerAction(new Card52PlayerAction())
-				.build());
-		cards.add(Card.builder().cardId(53).baseStrength(0).suit(Suit.WILD).playerAction(new Card53PlayerAction())
-				.build());
+		cards.add(Card.builder().cardId(SHAPESHIFTER.getId()).baseStrength(0).suit(Suit.WILD)
+				.playerAction(new Card51PlayerAction()).build());
+		cards.add(Card.builder().cardId(MIRAGE.getId()).baseStrength(0).suit(Suit.WILD)
+				.playerAction(new Card52PlayerAction()).build());
+		cards.add(Card.builder().cardId(DOPPELGAENGER.getId()).baseStrength(0).suit(Suit.WILD)
+				.playerAction(new Card53PlayerAction()).build());
 
 		return cards;
 	}
