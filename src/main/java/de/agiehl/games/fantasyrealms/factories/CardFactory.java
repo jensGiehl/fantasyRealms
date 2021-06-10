@@ -119,6 +119,7 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card52Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card52PlayerAction;
 import de.agiehl.games.fantasyrealms.factories.effects.Card53Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card53PlayerAction;
+import de.agiehl.games.fantasyrealms.factories.effects.Card54Bonus;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
@@ -127,6 +128,10 @@ public class CardFactory {
 
 	public CardFactory() {
 		super();
+	}
+
+	private Card getBaseGamePromoCard() {
+		return Card.builder().cardId(CardId.JESTER).baseStrength(3).suit(Suit.WIZARD).bonus(new Card54Bonus()).build();
 	}
 
 	private List<Card> createBaseGameCardDeck() {
