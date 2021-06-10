@@ -2,7 +2,7 @@ package de.agiehl.games.fantasyrealms.factories.effects;
 
 import java.util.List;
 
-import de.agiehl.games.fantasyrealms.factories.CardIds;
+import de.agiehl.games.fantasyrealms.factories.CardId;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Penalty;
@@ -16,7 +16,7 @@ public class Card11Penatly implements Penalty {
 	public void apply(Card card, HandCards handcards) {
 		List<Card> cards = handcards.getCardsBySuits(penatlySuits);
 
-		cards.stream().filter(c -> c.getCardId() != CardIds.LIGHTNING.getId()).forEach(c -> c.setBlanked(true));
+		cards.stream().filter(c -> c.getCardId() != CardId.LIGHTNING).forEach(c -> c.setBlanked(true));
 	}
 
 	@Override

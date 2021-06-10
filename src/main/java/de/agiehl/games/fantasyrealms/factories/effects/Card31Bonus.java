@@ -1,6 +1,6 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import de.agiehl.games.fantasyrealms.factories.CardIds;
+import de.agiehl.games.fantasyrealms.factories.CardId;
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
@@ -13,7 +13,7 @@ public class Card31Bonus implements BonusStrength {
 		int armyCount = handcards.countSuits(Suit.ARMY);
 
 		int bonus = 0;
-		if (handcards.containsOneOf(CardIds.QUEEN.getId())) {
+		if (handcards.containsOneOf(CardId.QUEEN)) {
 			bonus = 20 * armyCount;
 		} else {
 			bonus = 5 * armyCount;

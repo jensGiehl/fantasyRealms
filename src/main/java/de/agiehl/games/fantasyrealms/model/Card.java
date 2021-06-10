@@ -1,5 +1,6 @@
 package de.agiehl.games.fantasyrealms.model;
 
+import de.agiehl.games.fantasyrealms.factories.CardId;
 import lombok.Builder;
 import lombok.Data;
 
@@ -13,7 +14,7 @@ import lombok.Data;
 @Data
 public class Card {
 
-	int cardId;
+	CardId cardId;
 
 	Suit suit;
 

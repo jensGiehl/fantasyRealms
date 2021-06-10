@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.Objects;
 import java.util.UUID;
 
+import de.agiehl.games.fantasyrealms.factories.CardId;
 import lombok.Builder;
 import lombok.Singular;
 import lombok.Value;
@@ -44,17 +45,17 @@ public class HandCards {
 		return cards.size();
 	}
 
-	public boolean containsOneOf(int... cardIds) {
-		List<Integer> whitelistIds = Arrays.stream(cardIds).boxed().collect(toList());
+	public boolean containsOneOf(CardId... cards) {
+		List<CardId> whitelistCards = Arrays.asList(cards);
 
-		return cards.stream().map(Card::getCardId).filter(id -> whitelistIds.contains(id)).count() > 0;
+		return this.cards.stream().map(Card::getCardId).filter(card -> whitelistCards.contains(card)).count() > 0;
 	}
 
-	public boolean containsAllOf(int... cardIds) {
-		List<Integer> whitelistIds = Arrays.stream(cardIds).boxed().collect(toList());
+	public boolean containsAllOf(CardId... cards) {
+		List<CardId> whitelistCards = Arrays.asList(cards);
 
-		return cards.stream().map(Card::getCardId).filter(id -> whitelistIds.contains(id)).count() == whitelistIds
-				.size();
+		return this.cards.stream().map(Card::getCardId).filter(card -> whitelistCards.contains(card))
+				.count() == whitelistCards.size();
 	}
 
 	public List<Card> getCardsBySuits(Suit... suits) {

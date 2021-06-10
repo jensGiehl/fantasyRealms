@@ -1,6 +1,6 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import de.agiehl.games.fantasyrealms.factories.CardIds;
+import de.agiehl.games.fantasyrealms.factories.CardId;
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
@@ -12,7 +12,7 @@ public class Card46Bonus implements BonusStrength {
 	public void apply(Card card, HandCards handcards) {
 		if (handcards.containsSuits(Suit.LEADER)) {
 			int bonus = 15;
-			if (handcards.containsOneOf(CardIds.SWORD_OF_KETH.getId())) {
+			if (handcards.containsOneOf(CardId.SWORD_OF_KETH)) {
 				bonus = 40;
 			}
 
