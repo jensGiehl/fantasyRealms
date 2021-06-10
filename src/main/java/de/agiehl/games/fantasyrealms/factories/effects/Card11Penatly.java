@@ -5,10 +5,10 @@ import java.util.List;
 import de.agiehl.games.fantasyrealms.factories.CardId;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
-import de.agiehl.games.fantasyrealms.model.Penalty;
+import de.agiehl.games.fantasyrealms.model.PenaltyEffect;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card11Penatly implements Penalty {
+public class Card11Penatly implements PenaltyEffect {
 
 	private Suit[] penatlySuits = new Suit[] { Suit.FLAME };
 

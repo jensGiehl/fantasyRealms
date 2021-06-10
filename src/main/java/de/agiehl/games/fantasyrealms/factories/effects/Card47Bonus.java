@@ -5,10 +5,10 @@ import static java.util.stream.Collectors.toList;
 import java.util.List;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.BonusStrength;
+import de.agiehl.games.fantasyrealms.model.BonusEffect;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 
-public class Card47Bonus implements BonusStrength {
+public class Card47Bonus implements BonusEffect {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {

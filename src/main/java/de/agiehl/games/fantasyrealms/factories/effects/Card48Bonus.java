@@ -3,10 +3,10 @@ package de.agiehl.games.fantasyrealms.factories.effects;
 import static java.util.function.Predicate.not;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.BonusStrength;
+import de.agiehl.games.fantasyrealms.model.BonusEffect;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 
-public class Card48Bonus implements BonusStrength {
+public class Card48Bonus implements BonusEffect {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {

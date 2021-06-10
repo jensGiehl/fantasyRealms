@@ -1,10 +1,7 @@
 package de.agiehl.games.fantasyrealms.model;
 
-public interface Penalty {
+public interface BonusEffect {
 
 	void apply(Card card, HandCards handcards);
 
-	default void removePenaltyForSuits(Suit... suits) {
-
-	}
 }

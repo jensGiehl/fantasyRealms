@@ -7,10 +7,10 @@ import java.util.List;
 import de.agiehl.games.fantasyrealms.factories.CardId;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
-import de.agiehl.games.fantasyrealms.model.Penalty;
+import de.agiehl.games.fantasyrealms.model.PenaltyEffect;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card08Penalty implements Penalty {
+public class Card08Penalty implements PenaltyEffect {
 
 	private Suit[] penatlySuits = new Suit[] { Suit.ARMY, Suit.LAND, Suit.FLAME };
 

@@ -1,11 +1,11 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.Penalty;
+import de.agiehl.games.fantasyrealms.model.PenaltyEffect;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card17Penalty implements Penalty {
+public class Card17Penalty implements PenaltyEffect {
 
 	private Suit[] penatlySuits = new Suit[] { Suit.LAND };
 

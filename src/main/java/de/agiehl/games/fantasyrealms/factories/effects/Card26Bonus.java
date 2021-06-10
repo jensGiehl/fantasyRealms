@@ -6,11 +6,11 @@ import static java.util.stream.Collectors.groupingBy;
 import java.util.Map;
 
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.BonusStrength;
+import de.agiehl.games.fantasyrealms.model.BonusEffect;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
-public class Card26Bonus implements BonusStrength {
+public class Card26Bonus implements BonusEffect {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {

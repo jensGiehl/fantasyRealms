@@ -20,13 +20,13 @@ public class Card {
 
 	int baseStrength;
 
-	BonusStrength bonus;
+	BonusEffect bonus;
 
-	ClearsPenalty clearsPenalty;
+	ClearsPenaltyEffect clearsPenalty;
 
-	Penalty penalty;
+	PenaltyEffect penalty;
 
-	ChooseCard playerAction;
+	ChooseCard chooseCardAction;
 
 	Card choosenCard;
 

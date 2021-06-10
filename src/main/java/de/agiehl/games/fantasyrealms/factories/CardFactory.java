@@ -180,7 +180,7 @@ public class CardFactory {
 		cards.add(
 				Card.builder().cardId(BEASTMASTER).baseStrength(9).suit(Suit.WIZARD).bonus(new Card27Bonus()).build());
 		cards.add(Card.builder().cardId(NECROMANCER).baseStrength(3).suit(Suit.WIZARD).bonus(new Card28Bonus())
-				.playerAction(new Card28PlayerAction()).build());
+				.chooseCardAction(new Card28PlayerAction()).build());
 		cards.add(Card.builder().cardId(WARLOCK_LORD).baseStrength(25).suit(Suit.WIZARD).penalty(new Card29Penalty())
 				.build());
 		cards.add(
@@ -217,16 +217,16 @@ public class CardFactory {
 		cards.add(
 				Card.builder().cardId(WORLD_TREE).baseStrength(2).suit(Suit.ARTIFACT).bonus(new Card48Bonus()).build());
 		cards.add(Card.builder().cardId(BOOK_OF_CHANGES).baseStrength(3).suit(Suit.ARTIFACT)
-				.playerAction(new Card49PlayerAction()).build());
+				.chooseCardAction(new Card49PlayerAction()).build());
 		cards.add(Card.builder().cardId(PROTECTION_RUNE).baseStrength(1).suit(Suit.ARTIFACT).bonus(new Card50Bonus())
 				.build());
 
 		cards.add(Card.builder().cardId(SHAPESHIFTER).baseStrength(0).suit(Suit.WILD).bonus(new Card51Bonus())
-				.playerAction(new Card51PlayerAction()).build());
+				.chooseCardAction(new Card51PlayerAction()).build());
 		cards.add(Card.builder().cardId(MIRAGE).baseStrength(0).suit(Suit.WILD).bonus(new Card52Bonus())
-				.playerAction(new Card52PlayerAction()).build());
+				.chooseCardAction(new Card52PlayerAction()).build());
 		cards.add(Card.builder().cardId(DOPPELGAENGER).baseStrength(0).suit(Suit.WILD).bonus(new Card53Bonus())
-				.playerAction(new Card53PlayerAction()).build());
+				.chooseCardAction(new Card53PlayerAction()).build());
 
 		return cards;
 	}
