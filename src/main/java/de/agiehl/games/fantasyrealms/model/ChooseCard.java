@@ -7,7 +7,7 @@ public interface ChooseCard {
 
 	ChooseCardFrom chooseFrom();
 
-	default List<Suit> canChooseFrom() {
+	default List<Suit> canChooseFromSuit() {
 		return Collections.emptyList();
 	}
 

@@ -8,8 +8,10 @@ public class Card51Bonus implements BonusStrength {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {
-		card.setCardId(card.getChoosenCard().getCardId());
-		card.setSuit(card.getChoosenCard().getSuit());
+		Card choosenCard = card.getChoosenCard();
+
+		card.setCardId(choosenCard.getCardId());
+		card.setSuit(choosenCard.getSuit());
 	}
 
 }

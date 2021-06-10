@@ -17,7 +17,7 @@ public class Card52PlayerAction implements ChooseCard {
 	}
 
 	@Override
-	public List<Suit> canChooseFrom() {
+	public List<Suit> canChooseFromSuit() {
 		return asList(new Suit[] { Suit.ARMY, Suit.LAND, Suit.WEATHER, Suit.FLOOD, Suit.FLAME });
 	}
 
