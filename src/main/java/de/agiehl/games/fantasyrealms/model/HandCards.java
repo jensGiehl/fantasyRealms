@@ -7,6 +7,7 @@ import static java.util.stream.Collectors.toList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 import java.util.UUID;
 
 import de.agiehl.games.fantasyrealms.factories.CardId;
@@ -87,7 +88,8 @@ public class HandCards {
 	}
 
 	public List<BonusEffect> getAllBonusEffects() {
-		return getAllCardsWithBonusEffects().stream().map(Card::getBonus).collect(toList());
+		return getAllCardsWithBonusEffects().stream().map(Card::getBonus).filter(Optional::isPresent).map(Optional::get)
+				.collect(toList());
 	}
 
 	public List<Card> getAllCardsWithPenaltyEffects() {
@@ -100,11 +102,13 @@ public class HandCards {
 	}
 
 	public List<PenaltyEffect> getAllPenaltyEffects() {
-		return getAllCardsWithPenaltyEffects().stream().map(Card::getPenalty).collect(toList());
+		return getAllCardsWithPenaltyEffects().stream().map(Card::getPenalty).filter(Optional::isPresent)
+				.map(Optional::get).collect(toList());
 	}
 
 	public List<PenaltyEffect> getAllPenaltyEffectsWithSuit(Suit... suits) {
-		return getAllCardsWithPenaltyEffectsWithSuit(suits).stream().map(Card::getPenalty).collect(toList());
+		return getAllCardsWithPenaltyEffectsWithSuit(suits).stream().map(Card::getPenalty).filter(Optional::isPresent)
+				.map(Optional::get).collect(toList());
 	}
 
 	public List<Card> getAllCardsWithPlayerActionEffects() {
@@ -112,7 +116,8 @@ public class HandCards {
 	}
 
 	public List<ChooseCard> getAllPlayerActions() {
-		return getAllCardsWithPlayerActionEffects().stream().map(Card::getChooseCardAction).collect(toList());
+		return getAllCardsWithPlayerActionEffects().stream().map(Card::getChooseCardAction).filter(Optional::isPresent)
+				.map(Optional::get).collect(toList());
 	}
 
 }

@@ -1,5 +1,7 @@
 package de.agiehl.games.fantasyrealms.model;
 
+import java.util.Optional;
+
 import de.agiehl.games.fantasyrealms.factories.CardId;
 import lombok.Builder;
 import lombok.Data;
@@ -45,6 +47,26 @@ public class Card {
 		}
 
 		return baseStrength + bonusPoints;
+	}
+
+	public Optional<BonusEffect> getBonus() {
+		return Optional.ofNullable(bonus);
+	}
+
+	public Optional<ClearsPenaltyEffect> getClearsPenalty() {
+		return Optional.ofNullable(clearsPenalty);
+	}
+
+	public Optional<PenaltyEffect> getPenalty() {
+		return Optional.ofNullable(penalty);
+	}
+
+	public Optional<ChooseCard> getChooseCardAction() {
+		return Optional.ofNullable(chooseCardAction);
+	}
+
+	public Optional<Card> getChoosenCard() {
+		return Optional.ofNullable(choosenCard);
 	}
 
 }
