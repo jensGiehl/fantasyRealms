@@ -111,7 +111,7 @@ public class HandCards {
 		return cards.stream().filter(c -> Objects.nonNull(c.getPlayerAction())).collect(toList());
 	}
 
-	public List<PlayerAction> getAllPlayerActions() {
+	public List<ChooseCard> getAllPlayerActions() {
 		return getAllCardsWithPlayerActionEffects().stream().map(Card::getPlayerAction).collect(toList());
 	}
 

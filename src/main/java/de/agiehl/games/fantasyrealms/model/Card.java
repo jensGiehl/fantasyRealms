@@ -26,7 +26,9 @@ public class Card {
 
 	Penalty penalty;
 
-	PlayerAction playerAction;
+	ChooseCard playerAction;
+
+	Card choosenCard;
 
 	@Builder.Default
 	int bonusPoints = 0;

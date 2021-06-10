@@ -87,6 +87,7 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card24Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card25Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card26Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card27Bonus;
+import de.agiehl.games.fantasyrealms.factories.effects.Card28Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card28PlayerAction;
 import de.agiehl.games.fantasyrealms.factories.effects.Card29Penalty;
 import de.agiehl.games.fantasyrealms.factories.effects.Card30Bonus;
@@ -112,8 +113,11 @@ import de.agiehl.games.fantasyrealms.factories.effects.Card47Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card48Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card49PlayerAction;
 import de.agiehl.games.fantasyrealms.factories.effects.Card50Bonus;
+import de.agiehl.games.fantasyrealms.factories.effects.Card51Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card51PlayerAction;
+import de.agiehl.games.fantasyrealms.factories.effects.Card52Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card52PlayerAction;
+import de.agiehl.games.fantasyrealms.factories.effects.Card53Bonus;
 import de.agiehl.games.fantasyrealms.factories.effects.Card53PlayerAction;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.Suit;
@@ -175,7 +179,7 @@ public class CardFactory {
 		cards.add(Card.builder().cardId(COLLECTOR).baseStrength(7).suit(Suit.WIZARD).bonus(new Card26Bonus()).build());
 		cards.add(
 				Card.builder().cardId(BEASTMASTER).baseStrength(9).suit(Suit.WIZARD).bonus(new Card27Bonus()).build());
-		cards.add(Card.builder().cardId(NECROMANCER).baseStrength(3).suit(Suit.WIZARD)
+		cards.add(Card.builder().cardId(NECROMANCER).baseStrength(3).suit(Suit.WIZARD).bonus(new Card28Bonus())
 				.playerAction(new Card28PlayerAction()).build());
 		cards.add(Card.builder().cardId(WARLOCK_LORD).baseStrength(25).suit(Suit.WIZARD).penalty(new Card29Penalty())
 				.build());
@@ -217,11 +221,11 @@ public class CardFactory {
 		cards.add(Card.builder().cardId(PROTECTION_RUNE).baseStrength(1).suit(Suit.ARTIFACT).bonus(new Card50Bonus())
 				.build());
 
-		cards.add(Card.builder().cardId(SHAPESHIFTER).baseStrength(0).suit(Suit.WILD)
+		cards.add(Card.builder().cardId(SHAPESHIFTER).baseStrength(0).suit(Suit.WILD).bonus(new Card51Bonus())
 				.playerAction(new Card51PlayerAction()).build());
-		cards.add(Card.builder().cardId(MIRAGE).baseStrength(0).suit(Suit.WILD).playerAction(new Card52PlayerAction())
-				.build());
-		cards.add(Card.builder().cardId(DOPPELGAENGER).baseStrength(0).suit(Suit.WILD)
+		cards.add(Card.builder().cardId(MIRAGE).baseStrength(0).suit(Suit.WILD).bonus(new Card52Bonus())
+				.playerAction(new Card52PlayerAction()).build());
+		cards.add(Card.builder().cardId(DOPPELGAENGER).baseStrength(0).suit(Suit.WILD).bonus(new Card53Bonus())
 				.playerAction(new Card53PlayerAction()).build());
 
 		return cards;

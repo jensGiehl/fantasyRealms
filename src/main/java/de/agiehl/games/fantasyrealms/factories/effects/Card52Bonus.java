@@ -4,11 +4,12 @@ import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 
-public class Card09Bonus implements BonusStrength {
+public class Card52Bonus implements BonusStrength {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {
-		card.getChoosenCard().setCleared(true);
+		card.setCardId(card.getChoosenCard().getCardId());
+		card.setSuit(card.getChoosenCard().getSuit());
 	}
 
 }
