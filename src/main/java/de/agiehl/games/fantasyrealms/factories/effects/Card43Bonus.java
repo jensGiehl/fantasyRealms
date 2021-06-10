@@ -1,7 +1,8 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import de.agiehl.games.fantasyrealms.model.Card;
+import de.agiehl.games.fantasyrealms.factories.BaseGameCards;
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
+import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
@@ -12,7 +13,7 @@ public class Card43Bonus implements BonusStrength {
 		if (handcards.containsSuits(Suit.LEADER)) {
 			int bonus = 10;
 
-			if (handcards.containsOneOf(46)) {
+			if (handcards.containsOneOf(BaseGameCards.SHIELD_OF_KETH.getId())) {
 				bonus = 40;
 			}
 

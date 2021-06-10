@@ -1,11 +1,13 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import java.util.List;
-import java.util.stream.Collectors;
+import static java.util.stream.Collectors.toList;
 
+import java.util.List;
+
+import de.agiehl.games.fantasyrealms.factories.BaseGameCards;
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.Penalty;
 import de.agiehl.games.fantasyrealms.model.HandCards;
+import de.agiehl.games.fantasyrealms.model.Penalty;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card08Penalty implements Penalty {
@@ -15,7 +17,9 @@ public class Card08Penalty implements Penalty {
 	@Override
 	public void apply(Card card, HandCards handcards) {
 		List<Card> blankedCards = handcards.getCardsBySuits(penatlySuits).stream()
-				.filter(c -> c.getCardId() != 19 && c.getCardId() != 1).collect(Collectors.toList());
+				.filter(c -> c.getCardId() != BaseGameCards.LIGHTNING.getId()
+						&& c.getCardId() != BaseGameCards.MOUNTAIN.getId())
+				.collect(toList());
 
 		blankedCards.forEach(c -> c.setBlanked(true));
 	}

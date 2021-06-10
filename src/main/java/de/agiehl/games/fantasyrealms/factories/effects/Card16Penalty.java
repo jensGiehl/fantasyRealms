@@ -3,9 +3,10 @@ package de.agiehl.games.fantasyrealms.factories.effects;
 import java.util.Arrays;
 import java.util.List;
 
+import de.agiehl.games.fantasyrealms.factories.BaseGameCards;
 import de.agiehl.games.fantasyrealms.model.Card;
-import de.agiehl.games.fantasyrealms.model.Penalty;
 import de.agiehl.games.fantasyrealms.model.HandCards;
+import de.agiehl.games.fantasyrealms.model.Penalty;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
 public class Card16Penalty implements Penalty {
@@ -16,7 +17,9 @@ public class Card16Penalty implements Penalty {
 	public void apply(Card card, HandCards handcards) {
 		List<Card> cards = handcards.getCardsExceptSuits(penatlySuits);
 
-		List<Integer> cardsWhichAreNotBlanked = Arrays.asList(new Integer[] { 1, 36, 8, 39, 9 });
+		List<Integer> cardsWhichAreNotBlanked = Arrays.asList(new Integer[] { BaseGameCards.MOUNTAIN.getId(),
+				BaseGameCards.UNICORN.getId(), BaseGameCards.GREAT_FLOOD.getId(), BaseGameCards.DRAGON.getId(),
+				BaseGameCards.ISLAND.getId() });
 
 		cards.stream().filter(c -> !cardsWhichAreNotBlanked.contains(c.getCardId())).forEach(c -> c.setBlanked(true));
 	}

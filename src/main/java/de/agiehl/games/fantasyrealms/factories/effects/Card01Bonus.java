@@ -1,7 +1,10 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import de.agiehl.games.fantasyrealms.model.Card;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SMOKE;
+import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WILDFIRE;
+
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
+import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Suit;
 
@@ -9,7 +12,7 @@ public class Card01Bonus implements BonusStrength {
 
 	@Override
 	public void apply(Card card, HandCards handcards) {
-		if (handcards.containsAllOf(13, 16)) {
+		if (handcards.containsAllOf(SMOKE.getId(), WILDFIRE.getId())) {
 			card.setBonusPoints(50);
 		}
 
