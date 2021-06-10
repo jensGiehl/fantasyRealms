@@ -4,7 +4,7 @@ import static java.util.stream.Collectors.toList;
 
 import java.util.List;
 
-import de.agiehl.games.fantasyrealms.factories.BaseGameCards;
+import de.agiehl.games.fantasyrealms.factories.CardIds;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
 import de.agiehl.games.fantasyrealms.model.Penalty;
@@ -17,8 +17,7 @@ public class Card08Penalty implements Penalty {
 	@Override
 	public void apply(Card card, HandCards handcards) {
 		List<Card> blankedCards = handcards.getCardsBySuits(penatlySuits).stream()
-				.filter(c -> c.getCardId() != BaseGameCards.LIGHTNING.getId()
-						&& c.getCardId() != BaseGameCards.MOUNTAIN.getId())
+				.filter(c -> c.getCardId() != CardIds.LIGHTNING.getId() && c.getCardId() != CardIds.MOUNTAIN.getId())
 				.collect(toList());
 
 		blankedCards.forEach(c -> c.setBlanked(true));

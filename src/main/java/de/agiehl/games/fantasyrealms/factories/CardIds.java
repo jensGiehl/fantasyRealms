@@ -5,7 +5,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Getter
-public enum BaseGameCards {
+public enum CardIds {
 
 	MOUNTAIN(1), CAVERN(2), BELL_TOWER(3), FOREST(4), EARTH_ELEMENTAL(5), FOUNTAIN_OF_LIFE(6), SWAMP(7), GREAT_FLOOD(8),
 	ISLAND(9), WATER_ELEMENTAL(10), RAINSTORM(11), BLIZZARD(12), SMOKE(13), WHIRLWIND(14), AIR_ELEMENTAL(15),

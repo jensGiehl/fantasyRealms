@@ -1,6 +1,6 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import de.agiehl.games.fantasyrealms.factories.BaseGameCards;
+import de.agiehl.games.fantasyrealms.factories.CardIds;
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.Card;
 import de.agiehl.games.fantasyrealms.model.HandCards;
@@ -14,7 +14,7 @@ public class Card07Bonus implements BonusStrength {
 
 		int bonus = beastCount * 12;
 
-		if (handcards.containsOneOf(BaseGameCards.ELVEN_ARCHERS.getId())) {
+		if (handcards.containsOneOf(CardIds.ELVEN_ARCHERS.getId())) {
 			bonus += 12;
 		}
 

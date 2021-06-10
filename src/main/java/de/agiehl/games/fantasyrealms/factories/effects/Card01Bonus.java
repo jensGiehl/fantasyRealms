@@ -1,7 +1,7 @@
 package de.agiehl.games.fantasyrealms.factories.effects;
 
-import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.SMOKE;
-import static de.agiehl.games.fantasyrealms.factories.BaseGameCards.WILDFIRE;
+import static de.agiehl.games.fantasyrealms.factories.CardIds.SMOKE;
+import static de.agiehl.games.fantasyrealms.factories.CardIds.WILDFIRE;
 
 import de.agiehl.games.fantasyrealms.model.BonusStrength;
 import de.agiehl.games.fantasyrealms.model.Card;
